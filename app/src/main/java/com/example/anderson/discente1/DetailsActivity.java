@@ -22,15 +22,24 @@ public class DetailsActivity extends AppCompatActivity {
 
     ContainerResponse data;
 
-    TextView cep, bairro, cidade, endereco, uf;
+    TextView cep;
+    TextView bairro;
+    TextView cidade;
+    TextView endereco;
+    TextView uf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
+        cep = findViewById(R.id.cep);
+        bairro = findViewById(R.id.bairro);
+        cidade = findViewById(R.id.cidade);
+        endereco = findViewById(R.id.endereco);
+        uf = findViewById(R.id.uf);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://webmaniabr.com/")
@@ -49,7 +58,7 @@ public class DetailsActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<ContainerResponse> call, Response<ContainerResponse> response) {
-                System.out.println(response.body());
+//                System.out.println(response.body());
 
                 ContainerResponse resposta = response.body();
 
